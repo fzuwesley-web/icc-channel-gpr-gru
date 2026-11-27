@@ -1,0 +1,47 @@
+  25/250 fits  450s
+  50/250 fits  707s
+  75/250 fits  831s
+  100/250 fits  1139s
+  125/250 fits  1870s
+  150/250 fits  2311s
+  175/250 fits  2580s
+  200/250 fits  2857s
+  225/250 fits  3050s
+  250/250 fits  3149s
+
+=== S-a non-overlapping folds (5 folds) ===
+  Harm1+GRU (ensemble)       RMSE 0.565±0.166  R2dem +0.761  h1 0.057  hlast 0.556
+  Harmonic (K=1)             RMSE 0.614±0.160  R2dem +0.737  h1 0.517  hlast 0.525
+  Seasonal naive             RMSE 0.619±0.178  R2dem +0.684  h1 0.558  hlast 0.728
+  AR(6)                      RMSE 0.662±0.153  R2dem +0.639  h1 0.050  hlast 0.799
+  GRU (ensemble)             RMSE 0.667±0.175  R2dem +0.636  h1 0.066  hlast 0.734
+  PF 1D GPR                  RMSE 0.681±0.121  R2dem +0.601  h1 0.131  hlast 0.705
+  Climatology                RMSE 1.030±0.040  R2dem -0.000  h1 0.846  hlast 0.898
+  Persistence                RMSE 1.341±0.172  R2dem +0.000  h1 0.498  hlast 1.518
+
+=== S-b 4 s history (9 folds) ===
+  Harm1+GRU (ensemble)       RMSE 0.534±0.121  R2dem +0.807  h1 0.050  hlast 0.543
+  Harmonic (K=1)             RMSE 0.589±0.114  R2dem +0.781  h1 0.528  hlast 0.540
+  Seasonal naive             RMSE 0.592±0.137  R2dem +0.725  h1 0.511  hlast 0.650
+  AR(6)                      RMSE 0.595±0.137  R2dem +0.706  h1 0.044  hlast 0.716
+  GRU (ensemble)             RMSE 0.642±0.153  R2dem +0.660  h1 0.059  hlast 0.801
+  Climatology                RMSE 1.041±0.024  R2dem -0.000  h1 0.939  hlast 1.070
+  Persistence                RMSE 1.397±0.262  R2dem +0.000  h1 0.423  hlast 1.760
+
+=== S-c expanding window (9 folds) ===
+  Harm1+GRU (ensemble)       RMSE 0.496±0.112  R2dem +0.838  h1 0.046  hlast 0.541
+  Harmonic (K=1)             RMSE 0.536±0.115  R2dem +0.823  h1 0.510  hlast 0.511
+  AR(6)                      RMSE 0.560±0.145  R2dem +0.739  h1 0.042  hlast 0.671
+  Seasonal naive             RMSE 0.587±0.139  R2dem +0.729  h1 0.512  hlast 0.656
+  GRU (ensemble)             RMSE 0.596±0.140  R2dem +0.708  h1 0.057  hlast 0.732
+  Climatology                RMSE 1.030±0.021  R2dem -0.000  h1 0.957  hlast 1.053
+  Persistence                RMSE 1.397±0.262  R2dem +0.000  h1 0.423  hlast 1.760
+
+=== S-d 2 s horizon (7 folds) ===
+  Harm1+GRU (ensemble)       RMSE 0.625±0.117  R2dem +0.709  h1 0.051  hlast 0.607
+  Seasonal naive             RMSE 0.633±0.140  R2dem +0.676  h1 0.518  hlast 0.649
+  Harmonic (K=1)             RMSE 0.642±0.121  R2dem +0.693  h1 0.580  hlast 0.603
+  AR(6)                      RMSE 0.736±0.125  R2dem +0.540  h1 0.047  hlast 0.728
+  GRU (ensemble)             RMSE 0.788±0.118  R2dem +0.469  h1 0.063  hlast 0.774
+  Climatology                RMSE 1.049±0.016  R2dem +0.000  h1 0.950  hlast 1.021
+  Persistence                RMSE 1.294±0.162  R2dem +0.000  h1 0.410  hlast 1.024

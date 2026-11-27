@@ -1,0 +1,5 @@
+{
+ "lml": 16739.737809968552,
+ "kernel": "Sliced(dim=0, RBF(length_scale=0.0414)) * Sliced(dim=1, 5.24**2 * ExpSineSquared(length_scale=11.2, periodicity=0.632)) + Sliced(dim=1, 0.339**2 * RBF(length_scale=0.111)) + WhiteKernel(noise_level=0.000224)",
+ "t_2d_s": 2278.7780029589776
+}

@@ -1,0 +1,58 @@
+{
+ "exvivo": {
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0743)) * Sliced(dim=1, 2.92**2 * ExpSineSquared(length_scale=2.66, periodicity=1)) + Sliced(dim=1, 0.0437**2 * RBF(length_scale=0.125)) + WhiteKernel(noise_level=2.2e-05)",
+  "lml": 30465.013968120238,
+  "theta": {
+   "k1__k1__length_scale": 0.07430166010073401,
+   "k1__k2__k1__k1__constant_value": 8.543932557193449,
+   "k1__k2__k1__k2__length_scale": 2.6614116256861475,
+   "k1__k2__k1__k2__periodicity": 1.0014608101716238,
+   "k1__k2__k2__k1__constant_value": 0.0019075030235340238,
+   "k1__k2__k2__k2__length_scale": 0.12455292535517135
+  },
+  "ell_f": 0.0743,
+  "C_p": 8.526399999999999,
+  "ell_p": 2.66,
+  "T": 1.0014608101716238,
+  "C_m": 0.0019096900000000003,
+  "ell_m": 0.125,
+  "noise_sigma_dB": 0.0045588462276559445,
+  "at_bound": 0,
+  "mean_order": 3,
+  "mean_r2": 0.9859049897442779,
+  "coarse_kernel": "Sliced(dim=0, RBF(length_scale=0.133)) * Sliced(dim=1, 2.18**2 * ExpSineSquared(length_scale=2.3, periodicity=1)) + Sliced(dim=1, 0.0491**2 * RBF(length_scale=0.13)) + WhiteKernel(noise_level=2.2e-05)",
+  "optimizer": "coarse-to-fine deterministic multistart with staged full-resolution refinement (round 5b)",
+  "t_2d_s": 2908.204724207986,
+  "t_pf_s": 76.64364220801508,
+  "t_pt_s": 4.0828044160152785,
+  "mem_peak_MB": 10285.117073059082
+ },
+ "invivo": {
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0414)) * Sliced(dim=1, 5.24**2 * ExpSineSquared(length_scale=11.2, periodicity=0.632)) + Sliced(dim=1, 0.339**2 * RBF(length_scale=0.111)) + WhiteKernel(noise_level=0.000224)",
+  "lml": 16739.73780983863,
+  "theta": {
+   "k1__k1__length_scale": 0.041431608541071745,
+   "k1__k2__k1__k1__constant_value": 27.412766059863326,
+   "k1__k2__k1__k2__length_scale": 11.238562734001825,
+   "k1__k2__k1__k2__periodicity": 0.6318424816782103,
+   "k1__k2__k2__k1__constant_value": 0.11512879146723624,
+   "k1__k2__k2__k2__length_scale": 0.11092896054591961
+  },
+  "ell_f": 0.0414,
+  "C_p": 27.457600000000003,
+  "ell_p": 11.2,
+  "T": 0.6318424816782103,
+  "C_m": 0.11492100000000001,
+  "ell_m": 0.111,
+  "noise_sigma_dB": 0.017270271163271848,
+  "at_bound": 0,
+  "mean_order": 3,
+  "mean_r2": 0.9951425146062673,
+  "coarse_kernel": "Sliced(dim=0, RBF(length_scale=0.0514)) * Sliced(dim=1, 1.44**2 * ExpSineSquared(length_scale=3.23, periodicity=0.632)) + Sliced(dim=1, 0.357**2 * RBF(length_scale=0.113)) + WhiteKernel(noise_level=0.000224)",
+  "optimizer": "coarse-to-fine deterministic multistart with staged full-resolution refinement (round 5b)",
+  "t_2d_s": 2511.554986375035,
+  "t_pf_s": 95.29993162496248,
+  "t_pt_s": 3.704024125006981,
+  "mem_peak_MB": 10285.115973472595
+ }
+}

@@ -1,0 +1,832 @@
+[字体] 已选用中文字体: PingFang SC
+============================================================
+  In-vivo (dataset v3) fitting
+  Source:  data/invivo_Rx_200T_100f_3.xlsx
+  Tx baseline: 0.052738597
+  Output:  invivo_result.pkl
+============================================================
+  [freqs] 读取完成，原始 shape = (100, 1)，路径: <project>/program-revision version/GPR_Model/data/f_LOG100.xlsx
+  [freqs] 频点数 N_freq = 100
+  [freqs] 频率范围: 100.0 kHz ~ 10.000 MHz
+[In-vivo] Time window: 5.00~8.95s (idx 100:180), Ra shape: (100, 80)
+  [Heart Rate] Estimated: 1.500 Hz (90.0 bpm)
+
+============================================================
+  Pipeline: In-vivo
+  N_freq=100, N_time=80, n_train=8000
+============================================================
+[Channel] Magnitude range: -59.99 ~ -25.35 dB
+
+[In-vivo] Fitting explicit mean function m(log10 f)...
+[MeanFn] polynomial order 3 (LOO RMSE 0.6880 dB, R^2 0.995143), residual per-freq mean |max| = 2.9010 dB
+  [MeanFn] between-frequency variance removed: 98.40%  (resid std 1.1539 dB vs original 9.1296 dB)
+
+[In-vivo] 2D GPR fitting (on residual)...
+[2D GPR] Training points: 8000  (100 freq × 80 time)
+
+[2D GPR Fitting]:   0%|          | 0/1 
+[2D GPR Fitting]:   0%|          | 0/1 , Fitting magnitude GPR...
+[2D GPR Fitting]:   0%|          | 0/1 , Done, log marginal likelihood = 16739.7378
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 16739.7378
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 16739.7378
+[2D GPR] measurement-noise prior: sigma = 0.01727 dB -> noise_level FIXED at 2.240e-04 (not optimised)
+[2D GPR] coarse search (2000 pts): Sliced(dim=0, RBF(length_scale=0.0514)) * Sliced(dim=1, 1.44**2 * ExpSineSquared(length_scale=3.23, periodicity=0.632)) + Sliced(dim=1, 0.357**2 * RBF(length_scale=0.113)) + WhiteKernel(noise_level=0.000224)  LML=2590.6  (637s)
+[2D GPR] Fitting complete.
+  [Profiling] 2D GPR fit time     : 2511.55 s
+  [Profiling] Peak memory (Python) : 10784.7 MB
+
+======================================================================
+  2D Joint GPR — Magnitude Channel Kernel
+======================================================================
+
+  Kernel expression:
+  Sliced(dim=0, RBF(length_scale=0.0414)) * Sliced(dim=1, 5.24**2 * ExpSineSquared(length_scale=11.2, periodicity=0.632)) + Sliced(dim=1, 0.339**2 * RBF(length_scale=0.111)) + WhiteKernel(noise_level=0.000224)
+
+  Log marginal likelihood: 16739.7378
+
+  >> Optimised cardiac period : 0.6318 s  ≈ 95.0 bpm
+  >> Frequency RBF length-scale: 0.0414  (log10 freq units, ≈ 0.04 decades)
+
+======================================================================
+
+[2D GPR Predict]:   0%|          | 0/100 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:   3%|▎         | 3/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:   6%|▌         | 6/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:  10%|█         | 10/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  14%|█▍        | 14/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  17%|█▋        | 17/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  20%|██        | 20/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  23%|██▎       | 23/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  26%|██▌       | 26/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  29%|██▉       | 29/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  32%|███▏      | 32/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  35%|███▌      | 35/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  38%|███▊      | 38/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  41%|████      | 41/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  44%|████▍     | 44/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  47%|████▋     | 47/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  50%|█████     | 50/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  53%|█████▎    | 53/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  56%|█████▌    | 56/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  59%|█████▉    | 59/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  62%|██████▏   | 62/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  65%|██████▌   | 65/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  68%|██████▊   | 68/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  71%|███████   | 71/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  74%|███████▍  | 74/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  77%|███████▋  | 77/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  80%|████████  | 80/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  83%|████████▎ | 83/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  86%|████████▌ | 86/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  89%|████████▉ | 89/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  92%|█████████▏| 92/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  95%|█████████▌| 95/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  98%|█████████▊| 98/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 100/100 freq  elapsed:00:03  ETA:00:00
+
+==================================================
+  Evaluation Results (training time points)
+==================================================
+  RMSE  : 0.0066 dB
+  MAE   : 0.0045 dB
+  R²    : 1.0000
+  95%CI Coverage: 100.0%  (ideal ≥ 95%)
+==================================================
+
+[In-vivo] Per-Frequency 1D GPR fitting (on residual)...
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01727 dB)
+
+  Magnitude:   0%|          | 0/100 
+  Magnitude:   1%|          | 1/100 
+  Magnitude:   2%|▏         | 2/100 
+  Magnitude:   3%|▎         | 3/100 
+  Magnitude:   4%|▍         | 4/100 
+  Magnitude:   5%|▌         | 5/100 
+  Magnitude:   6%|▌         | 6/100 
+  Magnitude:   7%|▋         | 7/100 
+  Magnitude:   8%|▊         | 8/100 
+  Magnitude:   9%|▉         | 9/100 
+  Magnitude:  10%|█         | 10/100 
+  Magnitude:  11%|█         | 11/100 
+  Magnitude:  12%|█▏        | 12/100 
+  Magnitude:  13%|█▎        | 13/100 
+  Magnitude:  14%|█▍        | 14/100 
+  Magnitude:  15%|█▌        | 15/100 
+  Magnitude:  16%|█▌        | 16/100 
+  Magnitude:  17%|█▋        | 17/100 
+  Magnitude:  18%|█▊        | 18/100 
+  Magnitude:  19%|█▉        | 19/100 
+  Magnitude:  20%|██        | 20/100 
+  Magnitude:  21%|██        | 21/100 
+  Magnitude:  22%|██▏       | 22/100 
+  Magnitude:  23%|██▎       | 23/100 
+  Magnitude:  24%|██▍       | 24/100 
+  Magnitude:  25%|██▌       | 25/100 
+  Magnitude:  26%|██▌       | 26/100 
+  Magnitude:  27%|██▋       | 27/100 
+  Magnitude:  28%|██▊       | 28/100 
+  Magnitude:  29%|██▉       | 29/100 
+  Magnitude:  30%|███       | 30/100 
+  Magnitude:  31%|███       | 31/100 
+  Magnitude:  32%|███▏      | 32/100 
+  Magnitude:  33%|███▎      | 33/100 
+  Magnitude:  34%|███▍      | 34/100 
+  Magnitude:  35%|███▌      | 35/100 
+  Magnitude:  36%|███▌      | 36/100 
+  Magnitude:  37%|███▋      | 37/100 
+  Magnitude:  38%|███▊      | 38/100 
+  Magnitude:  39%|███▉      | 39/100 
+  Magnitude:  40%|████      | 40/100 
+  Magnitude:  41%|████      | 41/100 
+  Magnitude:  42%|████▏     | 42/100 
+  Magnitude:  43%|████▎     | 43/100 
+  Magnitude:  44%|████▍     | 44/100 
+  Magnitude:  45%|████▌     | 45/100 
+  Magnitude:  46%|████▌     | 46/100 
+  Magnitude:  47%|████▋     | 47/100 
+  Magnitude:  48%|████▊     | 48/100 
+  Magnitude:  49%|████▉     | 49/100 
+  Magnitude:  50%|█████     | 50/100 
+  Magnitude:  51%|█████     | 51/100 
+  Magnitude:  52%|█████▏    | 52/100 
+  Magnitude:  53%|█████▎    | 53/100 
+  Magnitude:  54%|█████▍    | 54/100 
+  Magnitude:  55%|█████▌    | 55/100 
+  Magnitude:  56%|█████▌    | 56/100 
+  Magnitude:  57%|█████▋    | 57/100 
+  Magnitude:  58%|█████▊    | 58/100 
+  Magnitude:  59%|█████▉    | 59/100 
+  Magnitude:  60%|██████    | 60/100 
+  Magnitude:  61%|██████    | 61/100 
+  Magnitude:  62%|██████▏   | 62/100 
+  Magnitude:  63%|██████▎   | 63/100 
+  Magnitude:  64%|██████▍   | 64/100 
+  Magnitude:  65%|██████▌   | 65/100 
+  Magnitude:  66%|██████▌   | 66/100 
+  Magnitude:  67%|██████▋   | 67/100 
+  Magnitude:  68%|██████▊   | 68/100 
+  Magnitude:  69%|██████▉   | 69/100 
+  Magnitude:  70%|███████   | 70/100 
+  Magnitude:  71%|███████   | 71/100 
+  Magnitude:  72%|███████▏  | 72/100 
+  Magnitude:  73%|███████▎  | 73/100 
+  Magnitude:  74%|███████▍  | 74/100 
+  Magnitude:  75%|███████▌  | 75/100 
+  Magnitude:  76%|███████▌  | 76/100 
+  Magnitude:  77%|███████▋  | 77/100 
+  Magnitude:  78%|███████▊  | 78/100 
+  Magnitude:  79%|███████▉  | 79/100 
+  Magnitude:  80%|████████  | 80/100 
+  Magnitude:  81%|████████  | 81/100 
+  Magnitude:  82%|████████▏ | 82/100 
+  Magnitude:  83%|████████▎ | 83/100 
+  Magnitude:  84%|████████▍ | 84/100 
+  Magnitude:  85%|████████▌ | 85/100 
+  Magnitude:  86%|████████▌ | 86/100 
+  Magnitude:  87%|████████▋ | 87/100 
+  Magnitude:  88%|████████▊ | 88/100 
+  Magnitude:  89%|████████▉ | 89/100 
+  Magnitude:  90%|█████████ | 90/100 
+  Magnitude:  91%|█████████ | 91/100 
+  Magnitude:  92%|█████████▏| 92/100 
+  Magnitude:  93%|█████████▎| 93/100 
+  Magnitude:  94%|█████████▍| 94/100 
+  Magnitude:  95%|█████████▌| 95/100 
+  Magnitude:  96%|█████████▌| 96/100 
+  Magnitude:  97%|█████████▋| 97/100 
+  Magnitude:  98%|█████████▊| 98/100 
+  Magnitude:  99%|█████████▉| 99/100 
+  Magnitude: 100%|██████████| 100/100 
+  Magnitude: 100%|██████████| 100/100 
+[Per-Frequency 1D GPR] Complete.
+  [Profiling] Per-Freq 1D fit time : 95.30 s
+
+  [Per-Freq 1D GPR] Log Marginal Likelihood:
+    Sum   : 6473.9426  (across 100 freq models)
+    Mean  : 64.7394
+    Range : [13.5442, 175.6834]
+
+[In-vivo] Per-Time 1D GPR fitting (on residual)...
+[Per-Time 1D GPR] Fitting 80 time points... (noise prior sigma = 0.02778 dB)
+
+  Magnitude:   0%|          | 0/80 
+  Magnitude:   4%|▍         | 3/80 
+  Magnitude:   8%|▊         | 6/80 
+  Magnitude:  11%|█▏        | 9/80 
+  Magnitude:  15%|█▌        | 12/80 
+  Magnitude:  19%|█▉        | 15/80 
+  Magnitude:  22%|██▎       | 18/80 
+  Magnitude:  26%|██▋       | 21/80 
+  Magnitude:  30%|███       | 24/80 
+  Magnitude:  34%|███▍      | 27/80 
+  Magnitude:  38%|███▊      | 30/80 
+  Magnitude:  41%|████▏     | 33/80 
+  Magnitude:  45%|████▌     | 36/80 
+  Magnitude:  49%|████▉     | 39/80 
+  Magnitude:  52%|█████▎    | 42/80 
+  Magnitude:  56%|█████▋    | 45/80 
+  Magnitude:  60%|██████    | 48/80 
+  Magnitude:  64%|██████▍   | 51/80 
+  Magnitude:  68%|██████▊   | 54/80 
+  Magnitude:  71%|███████▏  | 57/80 
+  Magnitude:  75%|███████▌  | 60/80 
+  Magnitude:  79%|███████▉  | 63/80 
+  Magnitude:  82%|████████▎ | 66/80 
+  Magnitude:  86%|████████▋ | 69/80 
+  Magnitude:  90%|█████████ | 72/80 
+  Magnitude:  94%|█████████▍| 75/80 
+  Magnitude:  98%|█████████▊| 78/80 
+  Magnitude: 100%|██████████| 80/80 
+[Per-Time 1D GPR] Complete.
+  [Profiling] Per-Time 1D fit time : 3.70 s
+
+  [Per-Time 1D GPR] Log Marginal Likelihood:
+    Sum   : 2514.9955  (across 80 time models)
+    Mean  : 31.4374
+    Range : [-5.5648, 68.7063]
+
+  Training Time Summary (In-vivo):
+  2D Joint GPR    :  2511.55 s
+  Per-Freq 1D GPR :    95.30 s
+  Per-Time 1D GPR :     3.70 s
+
+[2D GPR Predict]:   0%|          | 0/100 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:   1%|          | 1/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   2%|▏         | 2/100 freq  elapsed:00:00  ETA:00:12
+[2D GPR Predict]:   3%|▎         | 3/100 freq  elapsed:00:00  ETA:00:12
+[2D GPR Predict]:   4%|▍         | 4/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   5%|▌         | 5/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   6%|▌         | 6/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   7%|▋         | 7/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   8%|▊         | 8/100 freq  elapsed:00:00  ETA:00:11
+[2D GPR Predict]:   9%|▉         | 9/100 freq  elapsed:00:01  ETA:00:11
+[2D GPR Predict]:  10%|█         | 10/100 freq  elapsed:00:01  ETA:00:11
+[2D GPR Predict]:  11%|█         | 11/100 freq  elapsed:00:01  ETA:00:11
+[2D GPR Predict]:  12%|█▏        | 12/100 freq  elapsed:00:01  ETA:00:11
+[2D GPR Predict]:  13%|█▎        | 13/100 freq  elapsed:00:01  ETA:00:10
+[2D GPR Predict]:  14%|█▍        | 14/100 freq  elapsed:00:01  ETA:00:10
+[2D GPR Predict]:  15%|█▌        | 15/100 freq  elapsed:00:01  ETA:00:10
+[2D GPR Predict]:  16%|█▌        | 16/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  17%|█▋        | 17/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  18%|█▊        | 18/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  19%|█▉        | 19/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  20%|██        | 20/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  21%|██        | 21/100 freq  elapsed:00:02  ETA:00:10
+[2D GPR Predict]:  22%|██▏       | 22/100 freq  elapsed:00:02  ETA:00:09
+[2D GPR Predict]:  23%|██▎       | 23/100 freq  elapsed:00:02  ETA:00:09
+[2D GPR Predict]:  24%|██▍       | 24/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  25%|██▌       | 25/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  26%|██▌       | 26/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  27%|██▋       | 27/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  28%|██▊       | 28/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  29%|██▉       | 29/100 freq  elapsed:00:03  ETA:00:08
+[2D GPR Predict]:  30%|███       | 30/100 freq  elapsed:00:03  ETA:00:09
+[2D GPR Predict]:  31%|███       | 31/100 freq  elapsed:00:03  ETA:00:08
+[2D GPR Predict]:  32%|███▏      | 32/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  33%|███▎      | 33/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  34%|███▍      | 34/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  35%|███▌      | 35/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  36%|███▌      | 36/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  37%|███▋      | 37/100 freq  elapsed:00:04  ETA:00:08
+[2D GPR Predict]:  38%|███▊      | 38/100 freq  elapsed:00:04  ETA:00:07
+[2D GPR Predict]:  39%|███▉      | 39/100 freq  elapsed:00:04  ETA:00:07
+[2D GPR Predict]:  40%|████      | 40/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  41%|████      | 41/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  42%|████▏     | 42/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  43%|████▎     | 43/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  44%|████▍     | 44/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  45%|████▌     | 45/100 freq  elapsed:00:05  ETA:00:07
+[2D GPR Predict]:  46%|████▌     | 46/100 freq  elapsed:00:05  ETA:00:06
+[2D GPR Predict]:  47%|████▋     | 47/100 freq  elapsed:00:05  ETA:00:06
+[2D GPR Predict]:  48%|████▊     | 48/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  49%|████▉     | 49/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  50%|█████     | 50/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  51%|█████     | 51/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  52%|█████▏    | 52/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  53%|█████▎    | 53/100 freq  elapsed:00:06  ETA:00:06
+[2D GPR Predict]:  54%|█████▍    | 54/100 freq  elapsed:00:06  ETA:00:05
+[2D GPR Predict]:  55%|█████▌    | 55/100 freq  elapsed:00:06  ETA:00:05
+[2D GPR Predict]:  56%|█████▌    | 56/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  57%|█████▋    | 57/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  58%|█████▊    | 58/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  59%|█████▉    | 59/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  60%|██████    | 60/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  61%|██████    | 61/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  62%|██████▏   | 62/100 freq  elapsed:00:07  ETA:00:05
+[2D GPR Predict]:  63%|██████▎   | 63/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  64%|██████▍   | 64/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  65%|██████▌   | 65/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  66%|██████▌   | 66/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  67%|██████▋   | 67/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  68%|██████▊   | 68/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  69%|██████▉   | 69/100 freq  elapsed:00:08  ETA:00:04
+[2D GPR Predict]:  70%|███████   | 70/100 freq  elapsed:00:08  ETA:00:03
+[2D GPR Predict]:  71%|███████   | 71/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  72%|███████▏  | 72/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  73%|███████▎  | 73/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  74%|███████▍  | 74/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  75%|███████▌  | 75/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  76%|███████▌  | 76/100 freq  elapsed:00:09  ETA:00:03
+[2D GPR Predict]:  77%|███████▋  | 77/100 freq  elapsed:00:09  ETA:00:02
+[2D GPR Predict]:  78%|███████▊  | 78/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  79%|███████▉  | 79/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  80%|████████  | 80/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  81%|████████  | 81/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  82%|████████▏ | 82/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  83%|████████▎ | 83/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  84%|████████▍ | 84/100 freq  elapsed:00:10  ETA:00:02
+[2D GPR Predict]:  85%|████████▌ | 85/100 freq  elapsed:00:10  ETA:00:01
+[2D GPR Predict]:  86%|████████▌ | 86/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  87%|████████▋ | 87/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  88%|████████▊ | 88/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  89%|████████▉ | 89/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  90%|█████████ | 90/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  91%|█████████ | 91/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  92%|█████████▏| 92/100 freq  elapsed:00:11  ETA:00:01
+[2D GPR Predict]:  93%|█████████▎| 93/100 freq  elapsed:00:11  ETA:00:00
+[2D GPR Predict]:  94%|█████████▍| 94/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]:  95%|█████████▌| 95/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]:  96%|█████████▌| 96/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]:  97%|█████████▋| 97/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]:  98%|█████████▊| 98/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]:  99%|█████████▉| 99/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 100/100 freq  elapsed:00:12  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 100/100 freq  elapsed:00:12  ETA:00:00
+
+[2D GPR Predict]:   0%|          | 0/100 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:   3%|▎         | 3/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:   6%|▌         | 6/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:   9%|▉         | 9/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:  12%|█▏        | 12/100 freq  elapsed:00:00  ETA:00:03
+[2D GPR Predict]:  15%|█▌        | 15/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  18%|█▊        | 18/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  22%|██▏       | 22/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  25%|██▌       | 25/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  28%|██▊       | 28/100 freq  elapsed:00:00  ETA:00:02
+[2D GPR Predict]:  31%|███       | 31/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  35%|███▌      | 35/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  39%|███▉      | 39/100 freq  elapsed:00:01  ETA:00:02
+[2D GPR Predict]:  42%|████▏     | 42/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  45%|████▌     | 45/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  49%|████▉     | 49/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  52%|█████▏    | 52/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  55%|█████▌    | 55/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  58%|█████▊    | 58/100 freq  elapsed:00:01  ETA:00:01
+[2D GPR Predict]:  61%|██████    | 61/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  64%|██████▍   | 64/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  67%|██████▋   | 67/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  70%|███████   | 70/100 freq  elapsed:00:02  ETA:00:01
+[2D GPR Predict]:  73%|███████▎  | 73/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  76%|███████▌  | 76/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  80%|████████  | 80/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  83%|████████▎ | 83/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  86%|████████▌ | 86/100 freq  elapsed:00:02  ETA:00:00
+[2D GPR Predict]:  89%|████████▉ | 89/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  92%|█████████▏| 92/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  95%|█████████▌| 95/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]:  98%|█████████▊| 98/100 freq  elapsed:00:03  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 100/100 freq  elapsed:00:03  ETA:00:00
+
+  In-sample comparison (In-vivo):
+  Method          RMSE (dB)       R²    R²_dem    Cov95
+  2D GPR             0.0066   1.0000    1.0000   100.0%
+  Per-Freq 1D        0.0051   1.0000    1.0000   100.0%
+  Per-Time 1D        0.0133   1.0000    0.9999   100.0%
+
+[In-vivo] Checkerboard holdout evaluation (interpolation)...
+
+======================================================================
+  Checkerboard Holdout Evaluation
+======================================================================
+  Frequency axis: 16 holdout / 84 train (total 100)
+  Time axis     : 16 holdout / 64 train (total 80)
+
+  [Holdout] Fitting 2D GPR on training subset...
+[MeanFn] polynomial order 3 (LOO RMSE 0.7188 dB, R^2 0.994899), residual per-freq mean |max| = 2.7624 dB
+[2D GPR] Training points: 5376  (84 freq × 64 time)
+
+[2D GPR Fitting]:   0%|          | 0/1 
+[2D GPR Fitting]:   0%|          | 0/1 , Fitting magnitude GPR...
+[2D GPR Fitting]:   0%|          | 0/1 , Done, log marginal likelihood = 5781.8986
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 5781.8986
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 5781.8986
+[2D GPR] measurement-noise prior: sigma = 0.07261 dB -> noise_level FIXED at 3.785e-03 (not optimised)
+[2D GPR] coarse search (1344 pts): Sliced(dim=0, RBF(length_scale=0.0616)) * Sliced(dim=1, 1.54**2 * ExpSineSquared(length_scale=3.46, periodicity=0.633)) + Sliced(dim=1, 0.372**2 * RBF(length_scale=0.131)) + WhiteKernel(noise_level=0.00379)  LML=719.0  (297s)
+[2D GPR] Fitting complete.
+
+[2D GPR Predict]:   0%|          | 0/84 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:   8%|▊         | 7/84 freq  elapsed:00:00  ETA:00:01
+[2D GPR Predict]:  17%|█▋        | 14/84 freq  elapsed:00:00  ETA:00:01
+[2D GPR Predict]:  25%|██▌       | 21/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  33%|███▎      | 28/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  42%|████▏     | 35/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  50%|█████     | 42/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  58%|█████▊    | 49/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  67%|██████▋   | 56/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  75%|███████▌  | 63/84 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  83%|████████▎ | 70/84 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]:  92%|█████████▏| 77/84 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 84/84 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 84/84 freq  elapsed:00:01  ETA:00:00
+
+[2D GPR Predict]:   0%|          | 0/16 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:  81%|████████▏ | 13/16 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 16/16 freq  elapsed:00:00  ETA:00:00
+  [Holdout] Fitting Per-Frequency 1D GPR on training time subset...
+[MeanFn] polynomial order 3 (LOO RMSE 0.6877 dB, R^2 0.995142), residual per-freq mean |max| = 2.8966 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.07200 dB)
+
+  Magnitude:   0%|          | 0/100 
+  Magnitude:   1%|          | 1/100 
+  Magnitude:   2%|▏         | 2/100 
+  Magnitude:   3%|▎         | 3/100 
+  Magnitude:   4%|▍         | 4/100 
+  Magnitude:   5%|▌         | 5/100 
+  Magnitude:   6%|▌         | 6/100 
+  Magnitude:   7%|▋         | 7/100 
+  Magnitude:   8%|▊         | 8/100 
+  Magnitude:   9%|▉         | 9/100 
+  Magnitude:  10%|█         | 10/100 
+  Magnitude:  11%|█         | 11/100 
+  Magnitude:  12%|█▏        | 12/100 
+  Magnitude:  13%|█▎        | 13/100 
+  Magnitude:  14%|█▍        | 14/100 
+  Magnitude:  15%|█▌        | 15/100 
+  Magnitude:  16%|█▌        | 16/100 
+  Magnitude:  17%|█▋        | 17/100 
+  Magnitude:  18%|█▊        | 18/100 
+  Magnitude:  19%|█▉        | 19/100 
+  Magnitude:  20%|██        | 20/100 
+  Magnitude:  21%|██        | 21/100 
+  Magnitude:  22%|██▏       | 22/100 
+  Magnitude:  23%|██▎       | 23/100 
+  Magnitude:  24%|██▍       | 24/100 
+  Magnitude:  25%|██▌       | 25/100 
+  Magnitude:  26%|██▌       | 26/100 
+  Magnitude:  27%|██▋       | 27/100 
+  Magnitude:  28%|██▊       | 28/100 
+  Magnitude:  29%|██▉       | 29/100 
+  Magnitude:  30%|███       | 30/100 
+  Magnitude:  31%|███       | 31/100 
+  Magnitude:  32%|███▏      | 32/100 
+  Magnitude:  33%|███▎      | 33/100 
+  Magnitude:  34%|███▍      | 34/100 
+  Magnitude:  35%|███▌      | 35/100 
+  Magnitude:  36%|███▌      | 36/100 
+  Magnitude:  37%|███▋      | 37/100 
+  Magnitude:  38%|███▊      | 38/100 
+  Magnitude:  39%|███▉      | 39/100 
+  Magnitude:  40%|████      | 40/100 
+  Magnitude:  41%|████      | 41/100 
+  Magnitude:  42%|████▏     | 42/100 
+  Magnitude:  43%|████▎     | 43/100 
+  Magnitude:  44%|████▍     | 44/100 
+  Magnitude:  45%|████▌     | 45/100 
+  Magnitude:  46%|████▌     | 46/100 
+  Magnitude:  47%|████▋     | 47/100 
+  Magnitude:  48%|████▊     | 48/100 
+  Magnitude:  49%|████▉     | 49/100 
+  Magnitude:  50%|█████     | 50/100 
+  Magnitude:  51%|█████     | 51/100 
+  Magnitude:  52%|█████▏    | 52/100 
+  Magnitude:  53%|█████▎    | 53/100 
+  Magnitude:  54%|█████▍    | 54/100 
+  Magnitude:  55%|█████▌    | 55/100 
+  Magnitude:  56%|█████▌    | 56/100 
+  Magnitude:  57%|█████▋    | 57/100 
+  Magnitude:  58%|█████▊    | 58/100 
+  Magnitude:  59%|█████▉    | 59/100 
+  Magnitude:  60%|██████    | 60/100 
+  Magnitude:  61%|██████    | 61/100 
+  Magnitude:  62%|██████▏   | 62/100 
+  Magnitude:  63%|██████▎   | 63/100 
+  Magnitude:  64%|██████▍   | 64/100 
+  Magnitude:  65%|██████▌   | 65/100 
+  Magnitude:  66%|██████▌   | 66/100 
+  Magnitude:  67%|██████▋   | 67/100 
+  Magnitude:  68%|██████▊   | 68/100 
+  Magnitude:  69%|██████▉   | 69/100 
+  Magnitude:  70%|███████   | 70/100 
+  Magnitude:  71%|███████   | 71/100 
+  Magnitude:  72%|███████▏  | 72/100 
+  Magnitude:  73%|███████▎  | 73/100 
+  Magnitude:  74%|███████▍  | 74/100 
+  Magnitude:  75%|███████▌  | 75/100 
+  Magnitude:  76%|███████▌  | 76/100 
+  Magnitude:  77%|███████▋  | 77/100 
+  Magnitude:  78%|███████▊  | 78/100 
+  Magnitude:  79%|███████▉  | 79/100 
+  Magnitude:  80%|████████  | 80/100 
+  Magnitude:  81%|████████  | 81/100 
+  Magnitude:  82%|████████▏ | 82/100 
+  Magnitude:  83%|████████▎ | 83/100 
+  Magnitude:  84%|████████▍ | 84/100 
+  Magnitude:  85%|████████▌ | 85/100 
+  Magnitude:  86%|████████▌ | 86/100 
+  Magnitude:  87%|████████▋ | 87/100 
+  Magnitude:  88%|████████▊ | 88/100 
+  Magnitude:  89%|████████▉ | 89/100 
+  Magnitude:  90%|█████████ | 90/100 
+  Magnitude:  91%|█████████ | 91/100 
+  Magnitude:  92%|█████████▏| 92/100 
+  Magnitude:  93%|█████████▎| 93/100 
+  Magnitude:  94%|█████████▍| 94/100 
+  Magnitude:  95%|█████████▌| 95/100 
+  Magnitude:  96%|█████████▌| 96/100 
+  Magnitude:  97%|█████████▋| 97/100 
+  Magnitude:  98%|█████████▊| 98/100 
+  Magnitude:  99%|█████████▉| 99/100 
+  Magnitude: 100%|██████████| 100/100 
+  Magnitude: 100%|██████████| 100/100 
+[Per-Frequency 1D GPR] Complete.
+  [Holdout] Fitting Per-Time 1D GPR on training freq subset...
+[MeanFn] polynomial order 3 (LOO RMSE 0.7193 dB, R^2 0.994897), residual per-freq mean |max| = 2.7666 dB
+[Per-Time 1D GPR] Fitting 80 time points... (noise prior sigma = 0.05629 dB)
+
+  Magnitude:   0%|          | 0/80 
+  Magnitude:   5%|▌         | 4/80 
+  Magnitude:  10%|█         | 8/80 
+  Magnitude:  14%|█▍        | 11/80 
+  Magnitude:  18%|█▊        | 14/80 
+  Magnitude:  21%|██▏       | 17/80 
+  Magnitude:  25%|██▌       | 20/80 
+  Magnitude:  29%|██▉       | 23/80 
+  Magnitude:  34%|███▍      | 27/80 
+  Magnitude:  39%|███▉      | 31/80 
+  Magnitude:  42%|████▎     | 34/80 
+  Magnitude:  46%|████▋     | 37/80 
+  Magnitude:  50%|█████     | 40/80 
+  Magnitude:  54%|█████▍    | 43/80 
+  Magnitude:  57%|█████▊    | 46/80 
+  Magnitude:  62%|██████▎   | 50/80 
+  Magnitude:  66%|██████▋   | 53/80 
+  Magnitude:  70%|███████   | 56/80 
+  Magnitude:  74%|███████▍  | 59/80 
+  Magnitude:  79%|███████▉  | 63/80 
+  Magnitude:  82%|████████▎ | 66/80 
+  Magnitude:  88%|████████▊ | 70/80 
+  Magnitude:  91%|█████████▏| 73/80 
+  Magnitude:  95%|█████████▌| 76/80 
+  Magnitude:  99%|█████████▉| 79/80 
+  Magnitude: 100%|██████████| 80/80 
+[Per-Time 1D GPR] Complete.
+
+============================================================================================
+  Method                        RMSE (dB)   MAE (dB)       R²    R²_dem   95%CI Cov.
+============================================================================================
+   2D GPR (train)                  0.0258     0.0189   1.0000    0.9994       100.0%
+ ★ 2D GPR (holdout)                0.0468     0.0368   1.0000    0.9977       100.0%
+   Per-Freq 1D (train)             0.0256     0.0205   1.0000    0.9993       100.0%
+ ★ Per-Freq 1D (holdout)           0.0412     0.0330   1.0000    0.9983       100.0%
+   Per-Time 1D (train)             0.0226     0.0156   1.0000    0.9998       100.0%
+ ★ Per-Time 1D (holdout)           0.0589     0.0397   1.0000    0.9991        97.5%
+============================================================================================
+  ★ = holdout (out-of-sample) metrics
+  R²_dem = per-frequency demeaned R² (R3-6 口径)
+
+
+[In-vivo] Block holdout evaluation (extrapolation)...
+
+======================================================================
+  Block (contiguous) Holdout Evaluation
+======================================================================
+
+  [A] Contiguous TIME block: train t[0:60] (5.00-7.95s), test t[60:80] (8.00-8.95s)
+[MeanFn] polynomial order 3 (LOO RMSE 0.6922 dB, R^2 0.995139), residual per-freq mean |max| = 2.8209 dB
+    fitting 2D GPR ...
+[2D GPR] Training points: 6000  (100 freq × 60 time)
+
+[2D GPR Fitting]:   0%|          | 0/1 
+[2D GPR Fitting]:   0%|          | 0/1 , Fitting magnitude GPR...
+[2D GPR Fitting]:   0%|          | 0/1 , Done, log marginal likelihood = 12299.4640
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 12299.4640
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 12299.4640
+[2D GPR] measurement-noise prior: sigma = 0.01727 dB -> noise_level FIXED at 2.368e-04 (not optimised)
+[2D GPR] coarse search (1500 pts): Sliced(dim=0, RBF(length_scale=0.0513)) * Sliced(dim=1, 1.4**2 * ExpSineSquared(length_scale=3.17, periodicity=0.632)) + Sliced(dim=1, 0.366**2 * RBF(length_scale=0.113)) + WhiteKernel(noise_level=0.000237)  LML=1865.2  (340s)
+[2D GPR] Fitting complete.
+
+[2D GPR Predict]:   0%|          | 0/100 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:   8%|▊         | 8/100 freq  elapsed:00:00  ETA:00:01
+[2D GPR Predict]:  16%|█▌        | 16/100 freq  elapsed:00:00  ETA:00:01
+[2D GPR Predict]:  24%|██▍       | 24/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  33%|███▎      | 33/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  42%|████▏     | 42/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  50%|█████     | 50/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  58%|█████▊    | 58/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  66%|██████▌   | 66/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  74%|███████▍  | 74/100 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  82%|████████▏ | 82/100 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]:  90%|█████████ | 90/100 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]:  98%|█████████▊| 98/100 freq  elapsed:00:01  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 100/100 freq  elapsed:00:01  ETA:00:00
+    fitting Per-Freq 1D ...
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01727 dB)
+
+  Magnitude:   0%|          | 0/100 
+  Magnitude:   1%|          | 1/100 
+  Magnitude:   2%|▏         | 2/100 
+  Magnitude:   3%|▎         | 3/100 
+  Magnitude:   4%|▍         | 4/100 
+  Magnitude:   5%|▌         | 5/100 
+  Magnitude:   6%|▌         | 6/100 
+  Magnitude:   7%|▋         | 7/100 
+  Magnitude:   8%|▊         | 8/100 
+  Magnitude:   9%|▉         | 9/100 
+  Magnitude:  10%|█         | 10/100 
+  Magnitude:  11%|█         | 11/100 
+  Magnitude:  12%|█▏        | 12/100 
+  Magnitude:  13%|█▎        | 13/100 
+  Magnitude:  14%|█▍        | 14/100 
+  Magnitude:  15%|█▌        | 15/100 
+  Magnitude:  16%|█▌        | 16/100 
+  Magnitude:  17%|█▋        | 17/100 
+  Magnitude:  18%|█▊        | 18/100 
+  Magnitude:  19%|█▉        | 19/100 
+  Magnitude:  20%|██        | 20/100 
+  Magnitude:  21%|██        | 21/100 
+  Magnitude:  22%|██▏       | 22/100 
+  Magnitude:  23%|██▎       | 23/100 
+  Magnitude:  24%|██▍       | 24/100 
+  Magnitude:  25%|██▌       | 25/100 
+  Magnitude:  26%|██▌       | 26/100 
+  Magnitude:  27%|██▋       | 27/100 
+  Magnitude:  28%|██▊       | 28/100 
+  Magnitude:  29%|██▉       | 29/100 
+  Magnitude:  30%|███       | 30/100 
+  Magnitude:  31%|███       | 31/100 
+  Magnitude:  32%|███▏      | 32/100 
+  Magnitude:  33%|███▎      | 33/100 
+  Magnitude:  34%|███▍      | 34/100 
+  Magnitude:  35%|███▌      | 35/100 
+  Magnitude:  36%|███▌      | 36/100 
+  Magnitude:  37%|███▋      | 37/100 
+  Magnitude:  38%|███▊      | 38/100 
+  Magnitude:  39%|███▉      | 39/100 
+  Magnitude:  40%|████      | 40/100 
+  Magnitude:  41%|████      | 41/100 
+  Magnitude:  42%|████▏     | 42/100 
+  Magnitude:  43%|████▎     | 43/100 
+  Magnitude:  44%|████▍     | 44/100 
+  Magnitude:  45%|████▌     | 45/100 
+  Magnitude:  46%|████▌     | 46/100 
+  Magnitude:  47%|████▋     | 47/100 
+  Magnitude:  48%|████▊     | 48/100 
+  Magnitude:  49%|████▉     | 49/100 
+  Magnitude:  50%|█████     | 50/100 
+  Magnitude:  51%|█████     | 51/100 
+  Magnitude:  52%|█████▏    | 52/100 
+  Magnitude:  53%|█████▎    | 53/100 
+  Magnitude:  54%|█████▍    | 54/100 
+  Magnitude:  55%|█████▌    | 55/100 
+  Magnitude:  56%|█████▌    | 56/100 
+  Magnitude:  57%|█████▋    | 57/100 
+  Magnitude:  58%|█████▊    | 58/100 
+  Magnitude:  59%|█████▉    | 59/100 
+  Magnitude:  60%|██████    | 60/100 
+  Magnitude:  61%|██████    | 61/100 
+  Magnitude:  62%|██████▏   | 62/100 
+  Magnitude:  63%|██████▎   | 63/100 
+  Magnitude:  64%|██████▍   | 64/100 
+  Magnitude:  65%|██████▌   | 65/100 
+  Magnitude:  66%|██████▌   | 66/100 
+  Magnitude:  67%|██████▋   | 67/100 
+  Magnitude:  68%|██████▊   | 68/100 
+  Magnitude:  69%|██████▉   | 69/100 
+  Magnitude:  70%|███████   | 70/100 
+  Magnitude:  71%|███████   | 71/100 
+  Magnitude:  72%|███████▏  | 72/100 
+  Magnitude:  73%|███████▎  | 73/100 
+  Magnitude:  74%|███████▍  | 74/100 
+  Magnitude:  75%|███████▌  | 75/100 
+  Magnitude:  76%|███████▌  | 76/100 
+  Magnitude:  77%|███████▋  | 77/100 
+  Magnitude:  78%|███████▊  | 78/100 
+  Magnitude:  79%|███████▉  | 79/100 
+  Magnitude:  80%|████████  | 80/100 
+  Magnitude:  81%|████████  | 81/100 
+  Magnitude:  82%|████████▏ | 82/100 
+  Magnitude:  83%|████████▎ | 83/100 
+  Magnitude:  84%|████████▍ | 84/100 
+  Magnitude:  85%|████████▌ | 85/100 
+  Magnitude:  86%|████████▌ | 86/100 
+  Magnitude:  87%|████████▋ | 87/100 
+  Magnitude:  88%|████████▊ | 88/100 
+  Magnitude:  89%|████████▉ | 89/100 
+  Magnitude:  90%|█████████ | 90/100 
+  Magnitude:  91%|█████████ | 91/100 
+  Magnitude:  92%|█████████▏| 92/100 
+  Magnitude:  93%|█████████▎| 93/100 
+  Magnitude:  94%|█████████▍| 94/100 
+  Magnitude:  95%|█████████▌| 95/100 
+  Magnitude:  96%|█████████▌| 96/100 
+  Magnitude:  97%|█████████▋| 97/100 
+  Magnitude:  98%|█████████▊| 98/100 
+  Magnitude:  99%|█████████▉| 99/100 
+  Magnitude: 100%|██████████| 100/100 
+  Magnitude: 100%|██████████| 100/100 
+[Per-Frequency 1D GPR] Complete.
+    fitting Per-Time 1D ...
+[Per-Time 1D GPR] Fitting 60 time points... (noise prior sigma = 0.02776 dB)
+
+  Magnitude:   0%|          | 0/60 
+  Magnitude:   5%|▌         | 3/60 
+  Magnitude:  10%|█         | 6/60 
+  Magnitude:  15%|█▌        | 9/60 
+  Magnitude:  20%|██        | 12/60 
+  Magnitude:  25%|██▌       | 15/60 
+  Magnitude:  30%|███       | 18/60 
+  Magnitude:  35%|███▌      | 21/60 
+  Magnitude:  40%|████      | 24/60 
+  Magnitude:  45%|████▌     | 27/60 
+  Magnitude:  50%|█████     | 30/60 
+  Magnitude:  55%|█████▌    | 33/60 
+  Magnitude:  60%|██████    | 36/60 
+  Magnitude:  65%|██████▌   | 39/60 
+  Magnitude:  70%|███████   | 42/60 
+  Magnitude:  75%|███████▌  | 45/60 
+  Magnitude:  80%|████████  | 48/60 
+  Magnitude:  85%|████████▌ | 51/60 
+  Magnitude:  90%|█████████ | 54/60 
+  Magnitude:  95%|█████████▌| 57/60 
+  Magnitude: 100%|██████████| 60/60 
+  Magnitude: 100%|██████████| 60/60 
+[Per-Time 1D GPR] Complete.
+
+  [B] Contiguous FREQ block: hold out f[60:80] (1.65-3.94 MHz), train on 80 freqs
+[MeanFn] polynomial order 3 (LOO RMSE 0.7247 dB, R^2 0.995139), residual per-freq mean |max| = 2.8108 dB
+    mean-function extrapolation on held-out band: RMSE 0.5619 dB, max |err| 1.0758 dB
+    fitting 2D GPR ...
+[2D GPR] Training points: 6400  (80 freq × 80 time)
+
+[2D GPR Fitting]:   0%|          | 0/1 
+[2D GPR Fitting]:   0%|          | 0/1 , Fitting magnitude GPR...
+[2D GPR Fitting]:   0%|          | 0/1 , Done, log marginal likelihood = 13322.3804
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 13322.3804
+[2D GPR Fitting]: 100%|██████████| 1/1 , Done, log marginal likelihood = 13322.3804
+[2D GPR] measurement-noise prior: sigma = 0.01801 dB -> noise_level FIXED at 2.154e-04 (not optimised)
+[2D GPR] coarse search (1600 pts): Sliced(dim=0, RBF(length_scale=0.05)) * Sliced(dim=1, 1.54**2 * ExpSineSquared(length_scale=3.38, periodicity=0.632)) + Sliced(dim=1, 0.351**2 * RBF(length_scale=0.113)) + WhiteKernel(noise_level=0.000215)  LML=2089.2  (367s)
+[2D GPR] Fitting complete.
+
+[2D GPR Predict]:   0%|          | 0/20 freq  elapsed:00:00  ETA:?
+[2D GPR Predict]:  20%|██        | 4/20 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  40%|████      | 8/20 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  60%|██████    | 12/20 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]:  80%|████████  | 16/20 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 20/20 freq  elapsed:00:00  ETA:00:00
+[2D GPR Predict]: 100%|██████████| 20/20 freq  elapsed:00:00  ETA:00:00
+    fitting Per-Time 1D ...
+[Per-Time 1D GPR] Fitting 80 time points... (noise prior sigma = 0.03263 dB)
+
+  Magnitude:   0%|          | 0/80 
+  Magnitude:   4%|▍         | 3/80 
+  Magnitude:   8%|▊         | 6/80 
+  Magnitude:  11%|█▏        | 9/80 
+  Magnitude:  15%|█▌        | 12/80 
+  Magnitude:  19%|█▉        | 15/80 
+  Magnitude:  22%|██▎       | 18/80 
+  Magnitude:  26%|██▋       | 21/80 
+  Magnitude:  30%|███       | 24/80 
+  Magnitude:  34%|███▍      | 27/80 
+  Magnitude:  38%|███▊      | 30/80 
+  Magnitude:  41%|████▏     | 33/80 
+  Magnitude:  45%|████▌     | 36/80 
+  Magnitude:  49%|████▉     | 39/80 
+  Magnitude:  52%|█████▎    | 42/80 
+  Magnitude:  56%|█████▋    | 45/80 
+  Magnitude:  60%|██████    | 48/80 
+  Magnitude:  64%|██████▍   | 51/80 
+  Magnitude:  68%|██████▊   | 54/80 
+  Magnitude:  71%|███████▏  | 57/80 
+  Magnitude:  75%|███████▌  | 60/80 
+  Magnitude:  79%|███████▉  | 63/80 
+  Magnitude:  82%|████████▎ | 66/80 
+  Magnitude:  86%|████████▋ | 69/80 
+  Magnitude:  90%|█████████ | 72/80 
+  Magnitude:  94%|█████████▍| 75/80 
+  Magnitude:  98%|█████████▊| 78/80 
+  Magnitude: 100%|██████████| 80/80 
+[Per-Time 1D GPR] Complete.
+
+============================================================================================
+  Method                          RMSE (dB)   MAE (dB)       R²    R²_dem   95%CI Cov.
+============================================================================================
+    2D GPR (time-block)               0.4863     0.3596   0.9971    0.8425        88.7%
+    Per-Freq 1D (time-block)          0.5245     0.3871   0.9966    0.8026        88.5%
+    Per-Time 1D (time-block)          1.1372     0.8358   0.9839    0.0000         6.7%
+    2D GPR (freq-block)               0.7886     0.6435   0.8481    0.4538       100.0%
+    Per-Time 1D (freq-block)          0.6286     0.4726   0.9035    0.7623        99.8%
+    Per-Freq 1D (freq-block)      N/A — no model at unobserved frequencies
+============================================================================================
+
+[Pipeline] Full result pickled to invivo_result.pkl
+
+============================================================
+  In-vivo (v3) metrics
+============================================================
+  Estimated heart rate: 1.500 Hz (90.0 bpm)
+Method            RMSE (dB)         R²   CI95 (%)
+------------------------------------------------------------
+2D GPR               0.0066     1.0000      99.95
+Per-Freq 1D          0.0051     1.0000     100.00
+Per-Time 1D          0.0133     1.0000     100.00
+

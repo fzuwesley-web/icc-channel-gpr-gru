@@ -1,0 +1,41 @@
+harmonic K dev RMSE: {1: np.float64(0.734), 2: np.float64(0.736), 3: np.float64(0.738), 4: np.float64(0.739)} -> K* 1
+AR p dev RMSE: {2: np.float64(0.594), 4: np.float64(0.593), 6: np.float64(0.59), 8: np.float64(0.698), 10: np.float64(0.715), 12: np.float64(0.782), 15: np.float64(0.944), 20: np.float64(1.322)} -> p* 6
+  18/162 tasks  183s
+  36/162 tasks  527s
+  54/162 tasks  1144s
+  72/162 tasks  2248s
+  90/162 tasks  2995s
+  108/162 tasks  3342s
+  126/162 tasks  3859s
+  144/162 tasks  4699s
+  162/162 tasks  6015s
+{
+ "K_star": 1,
+ "p_star": 6,
+ "gru": {
+  "GRU": {
+   "H": 64,
+   "W": 10,
+   "regime": "E500",
+   "dev_rmse": 0.5308058965004361,
+   "dev_sd": 0.06647337495336497,
+   "n": 9
+  },
+  "Harm1+GRU": {
+   "H": 16,
+   "W": 10,
+   "regime": "E1000",
+   "dev_rmse": 0.671539365841305,
+   "dev_sd": 0.04774206654988435,
+   "n": 9
+  }
+ },
+ "main_variant": "GRU",
+ "baseline_dev_rmse": {
+  "Persistence": 1.0488807566598732,
+  "Climatology": 0.7995204134420457,
+  "Seasonal naive": 0.676875250394644,
+  "Harmonic (K=1)": 0.73372551170976,
+  "AR(6)": 0.589590228274377
+ }
+}

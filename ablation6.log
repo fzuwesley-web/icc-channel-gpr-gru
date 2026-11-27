@@ -1,0 +1,10 @@
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 1 (LOO RMSE 1.0448 dB, R^2 0.989972), residual per-freq mean |max| = 3.6386 dB
+[A. product, ESS+RBF(t) (this work)] LML=   1997.3 p=6 bound=0 block RMSE=0.4857 R2dem=+0.8266 (293s)
+[B. product, ESS only] LML=  -1392.2 p=4 bound=0 block RMSE=0.6104 R2dem=+0.7222 (243s)
+[C. product, RBF(t) only] LML=   1700.8 p=3 bound=0 block RMSE=1.1995 R2dem=+0.0957 (34s)
+[D. product, Matern only] LML=    925.3 p=3 bound=0 block RMSE=1.2894 R2dem=-0.3086 (37s)
+[E. product, ESS+Matern (first revision)] LML=   1457.2 p=6 bound=0 block RMSE=0.5138 R2dem=+0.8142 (346s)
+[F. ADDITIVE (not product)] LML=-1275779.2 p=6 bound=0 block RMSE=0.8975 R2dem=+0.2835 (232s)
+[G. no frequency kernel] LML=-3341763.4 p=5 bound=0 block RMSE=1.2687 R2dem=+0.2579 (127s)
+ABLATION DONE

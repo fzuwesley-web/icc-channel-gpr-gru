@@ -1,0 +1,79 @@
+{
+ "A. product, ESS+RBF(t) (this work)": {
+  "lml": 1997.305086009879,
+  "n_hyper": 6,
+  "at_bound": 0,
+  "rmse_insample": 0.004303968735188649,
+  "rmse_block": 0.48567097272626647,
+  "r2dem_block": 0.8266287548273004,
+  "cov95_block": 91.60000000000001,
+  "secs": 292.5819120829692,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0512)) * Sliced(dim=1, 1.35**2 * ExpSineSquared(length_scale=3.24, periodicity=0.632)) + Sliced(dim=1, 0.34**2 * RBF(length_scale=0.113)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "B. product, ESS only": {
+  "lml": -1392.2360561943813,
+  "n_hyper": 4,
+  "at_bound": 0,
+  "rmse_insample": 0.0006408204188848046,
+  "rmse_block": 0.6103646033321886,
+  "r2dem_block": 0.7222449782119691,
+  "cov95_block": 74.2,
+  "secs": 242.7536055840319,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0548)) * Sliced(dim=1, 0.905**2 * ExpSineSquared(length_scale=0.0908, periodicity=1.27)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "C. product, RBF(t) only": {
+  "lml": 1700.7732203274343,
+  "n_hyper": 3,
+  "at_bound": 0,
+  "rmse_insample": 0.005313483326033101,
+  "rmse_block": 1.1995394880685537,
+  "r2dem_block": 0.09573854535966897,
+  "cov95_block": 91.8,
+  "secs": 33.70261308399495,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0629)) * Sliced(dim=1, 0.883**2 * RBF(length_scale=0.131)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "D. product, Matern only": {
+  "lml": 925.3425221525292,
+  "n_hyper": 3,
+  "at_bound": 0,
+  "rmse_insample": 0.0016391546351321247,
+  "rmse_block": 1.2894328001765247,
+  "r2dem_block": -0.30860789921931286,
+  "cov95_block": 96.6,
+  "secs": 36.81234599999152,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0657)) * Sliced(dim=1, 1.43**2 * Matern(length_scale=0.486, nu=1.5)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "E. product, ESS+Matern (first revision)": {
+  "lml": 1457.236452857596,
+  "n_hyper": 6,
+  "at_bound": 0,
+  "rmse_insample": 0.0022055729329635283,
+  "rmse_block": 0.5137531015928429,
+  "r2dem_block": 0.8141869427522191,
+  "cov95_block": 94.0,
+  "secs": 346.2287713330006,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0448)) * Sliced(dim=1, 1.5**2 * ExpSineSquared(length_scale=3.4, periodicity=0.631)) + Sliced(dim=1, 0.464**2 * Matern(length_scale=0.327, nu=1.5)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "F. ADDITIVE (not product)": {
+  "lml": -1275779.244043817,
+  "n_hyper": 6,
+  "at_bound": 0,
+  "rmse_insample": 0.7155247006223712,
+  "rmse_block": 0.8975262945775695,
+  "r2dem_block": 0.2835100939103712,
+  "cov95_block": 41.4,
+  "secs": 232.3725565840141,
+  "kernel": "Sliced(dim=0, RBF(length_scale=0.0688)) + Sliced(dim=1, 0.89**2 * ExpSineSquared(length_scale=2.81, periodicity=0.635)) + Sliced(dim=1, 0.134**2 * RBF(length_scale=0.124)) + WhiteKernel(noise_level=0.000187)"
+ },
+ "G. no frequency kernel": {
+  "lml": -3341763.421190557,
+  "n_hyper": 5,
+  "at_bound": 0,
+  "rmse_insample": 1.1567379626902252,
+  "rmse_block": 1.2686519659808568,
+  "r2dem_block": 0.25788622383196436,
+  "cov95_block": 42.6,
+  "secs": 127.07864820800023,
+  "kernel": "Sliced(dim=1, 0.385**2 * ExpSineSquared(length_scale=0.455, periodicity=1.91)) + Sliced(dim=1, 0.195**2 * RBF(length_scale=0.141)) + WhiteKernel(noise_level=0.000187)"
+ }
+}

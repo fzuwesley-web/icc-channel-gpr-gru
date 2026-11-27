@@ -1,0 +1,67 @@
+{
+ "rule": [
+  "Selection rule (fixed before any test-fold run):",
+  "  * Baselines: harmonic K in {1,2,3,4} and AR order p in {2,4,6,8,10,12,15,20}",
+  "    minimizing mean forecast RMSE over the development folds.",
+  "  * GRU: for each variant (plain GRU; harmonic(K*)+GRU residual), the",
+  "    (H, W, training regime) minimizing mean forecast RMSE over",
+  "    development folds x 3 seeds.",
+  "  * Main method: the variant with the lower selected mean RMSE."
+ ],
+ "K_star": 1,
+ "p_star": 6,
+ "k_scores": {
+  "1": 0.73372551170976,
+  "2": 0.7364938640825965,
+  "3": 0.7381018534576723,
+  "4": 0.7391656842133337
+ },
+ "p_scores": {
+  "2": 0.5939087425379919,
+  "4": 0.5927611678772933,
+  "6": 0.589590228274377,
+  "8": 0.6981308269640206,
+  "10": 0.7150986779509441,
+  "12": 0.7819233246989193,
+  "15": 0.9444964301198161,
+  "20": 1.321926627966061
+ },
+ "gru": {
+  "GRU": {
+   "H": 64,
+   "W": 10,
+   "regime": "E500",
+   "dev_rmse": 0.5308058965004361,
+   "dev_sd": 0.06647337495336497,
+   "n": 9
+  },
+  "Harm1+GRU": {
+   "H": 16,
+   "W": 10,
+   "regime": "E1000",
+   "dev_rmse": 0.671539365841305,
+   "dev_sd": 0.04774206654988435,
+   "n": 9
+  }
+ },
+ "main_variant": "GRU",
+ "baseline_dev_rmse": {
+  "Persistence": 1.0488807566598732,
+  "Climatology": 0.7995204134420457,
+  "Seasonal naive": 0.676875250394644,
+  "Harmonic (K=1)": 0.73372551170976,
+  "AR(6)": 0.589590228274377
+ },
+ "dev_origins": [
+  60,
+  70,
+  80
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "wall_s": 6015.470368146896,
+ "locked_at": "2026-11-08 12:40:45"
+}

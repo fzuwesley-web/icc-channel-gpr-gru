@@ -1,0 +1,71 @@
+GRU runs: 120 in 685s
+ensemble lambda (dev-calibrated): {'GRU': 23.550000000000022, 'Harm1+GRU': 14.650000000000013}
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 2 (LOO RMSE 0.6612 dB, R^2 0.995040), residual per-freq mean |max| = 3.2525 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01769 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 100
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6616 dB, R^2 0.995315), residual per-freq mean |max| = 2.9118 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01752 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 110
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6422 dB, R^2 0.995575), residual per-freq mean |max| = 2.8102 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01706 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 120
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6408 dB, R^2 0.995617), residual per-freq mean |max| = 2.7561 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01675 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 130
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6409 dB, R^2 0.995676), residual per-freq mean |max| = 2.6613 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01681 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 140
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6633 dB, R^2 0.995485), residual per-freq mean |max| = 2.7219 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01735 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 150
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.6922 dB, R^2 0.995139), residual per-freq mean |max| = 2.8209 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01727 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 160
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.7015 dB, R^2 0.994987), residual per-freq mean |max| = 3.0153 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01792 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 170
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.7162 dB, R^2 0.994701), residual per-freq mean |max| = 3.1119 dB
+[Per-Frequency 1D GPR] Fitting 100 frequency points... (noise prior sigma = 0.01733 dB)
+
+[Per-Frequency 1D GPR] Complete.
+  baselines done for origin 180
+
+=== TEST (9 folds) ===
+Harm1+GRU (ensemble)         RMSE 0.551±0.142  R2dem +0.782  h1 0.049  h5 0.542  h20 0.587  excl160 0.564  fold160 0.448
+Harm1+GRU (single seed)      RMSE 0.554 (SD over seeds 0.002)
+Seasonal naive               RMSE 0.593±0.141  R2dem +0.721  h1 0.513  h5 0.572  h20 0.656  excl160 0.607  fold160 0.487
+Harmonic (K=1)               RMSE 0.606±0.144  R2dem +0.757  h1 0.539  h5 0.588  h20 0.558  excl160 0.620  fold160 0.495
+AR(6)                        RMSE 0.641±0.141  R2dem +0.663  h1 0.046  h5 0.627  h20 0.779  excl160 0.649  fold160 0.577
+GRU (ensemble)               RMSE 0.646±0.160  R2dem +0.654  h1 0.061  h5 0.624  h20 0.782  excl160 0.647  fold160 0.634
+PF 1D GPR                    RMSE 0.647±0.135  R2dem +0.661  h1 0.074  h5 0.627  h20 0.718  excl160 0.662  fold160 0.524
+GRU (single seed)            RMSE 0.651 (SD over seeds 0.009)
+Climatology                  RMSE 1.041±0.034  R2dem -0.000  h1 0.977  h5 0.945  h20 1.037  excl160 1.034  fold160 1.105
+Persistence                  RMSE 1.397±0.262  R2dem +0.000  h1 0.423  h5 1.600  h20 1.760  excl160 1.429  fold160 1.137
+lookahead: {'GRU': {'h_skill': 20, 'h_adv': 0, 'best_simple_baseline': 'AR(6)'}, 'Harm1+GRU': {'h_skill': 20, 'h_adv': 0, 'best_simple_baseline': 'AR(6)'}}
+coverage: {'GRU': {'0.5': 75.95555555555555, '0.8': 91.42222222222222, '0.9': 94.91666666666667, '0.95': 96.61666666666667, '0.99': 98.18888888888888}, 'Harm1+GRU': {'0.5': 62.7388888888889, '0.8': 85.58888888888889, '0.9': 91.52222222222223, '0.95': 94.2888888888889, '0.99': 97.21666666666668}}
+timing: {'gru': {'GRU': {'train_s_mean': 49.63198258053938, 'infer_ms_mean': 16.717594500126626}, 'Harm1+GRU': {'train_s_mean': 18.02632743466626, 'infer_ms_mean': 3.7677549369012313}}, 'pf_gpr_s_mean': 58.666387657330944}

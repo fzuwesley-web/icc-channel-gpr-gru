@@ -1,0 +1,13 @@
+[字体] 已选用中文字体: PingFang SC
+[MeanFn] polynomial order 3 (LOO RMSE 0.0705 dB, R^2 0.985905), residual per-freq mean |max| = 0.1549 dB
+[exvivo] multistart: T*=1.0000 s LML=6473.4 (604s)
+[exvivo] sweep up done (909s)
+[exvivo] sweep down done (1232s)
+[exvivo] sweep from_optimum done (1935s)
+[exvivo] profile argmax T=1.0020 s, max=6471.8; local maxima at [0.498, 0.598, 0.769, 1.002, 1.479]
+[MeanFn] polynomial order 3 (LOO RMSE 0.6880 dB, R^2 0.995143), residual per-freq mean |max| = 2.9010 dB
+[invivo] multistart: T*=0.6320 s LML=2624.2 (606s)
+[invivo] sweep up done (824s)
+[invivo] sweep down done (1037s)
+[invivo] sweep from_optimum done (1651s)
+[invivo] profile argmax T=0.6320 s, max=2624.2; local maxima at [0.514, 0.632, 0.809, 1.261, 1.809]
